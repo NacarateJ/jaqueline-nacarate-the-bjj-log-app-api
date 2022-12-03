@@ -6,8 +6,8 @@ exports.up = function (knex) {
   return knex.schema.createTable("videos", (table) => {
     table.uuid("id").primary(); // primary key for video row
     table.string("technique_name").notNullable();
-    table.string("description").notNullable();
-    table.string("video_path").notNullable();
+    table.string("description", 2000).notNullable();
+    table.string("video_path", 50).notNullable();
     table
       .uuid("users_id") // users_id is the foreign key
       .notNullable()
@@ -15,7 +15,7 @@ exports.up = function (knex) {
       .inTable("users")
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
-    table.timestamp("updated_at").defaultTo(knex.fn.now());
+    table.timestamps(true, true);
   });
 };
 
