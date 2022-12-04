@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # file with videos
-bjj*
+# bjj*
 
 # dependencies
 /node_modules
