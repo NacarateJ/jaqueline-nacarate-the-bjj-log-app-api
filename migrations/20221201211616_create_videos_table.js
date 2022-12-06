@@ -7,7 +7,7 @@ exports.up = function (knex) {
     table.uuid("id").primary(); // primary key for video row
     table.string("technique_name").notNullable();
     table.string("description", 2000).notNullable();
-    table.string("video", 50).notNullable();
+    table.string("video", 100).notNullable();
     table
       .uuid("user_id") // user_id is the foreign key
       .notNullable()

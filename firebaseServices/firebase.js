@@ -13,6 +13,19 @@ admin.initializeApp({
 const bucket = admin.storage().bucket();
 
 const uploadVideo = (req, res, next) => {
+ if (
+    !req.body.technique_name ||
+    !req.body.description||
+    // !req.file ||
+    !req.body.user_id
+  ) {
+    return res
+      .status(400)
+      .send(
+        "Please make sure to provide technique name, description and users_id fields in the request"
+      );
+  }
+
   const video = req.file;
   const fileName = Date.now() + "." + video.originalname.split(".").pop();
 

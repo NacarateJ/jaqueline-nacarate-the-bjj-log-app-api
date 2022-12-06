@@ -32,25 +32,25 @@ const findOne = (req, res) => {
 
 const add = (req, res) => {
 //   Validate the request body for required data
-//   if (
-//     !req.body.technique_name ||
-//     !req.body.description||
-//     !req.body.video ||
-//     !req.body.user_id
-//   ) {
-//     return res
-//       .status(400)
-//       .send(
-//         "Please make sure to provide technique name, description and users_id fields in the request"
-//       );
-//   }
+  // if (
+  //   !req.body.technique_name ||
+  //   !req.body.description||
+  //   // !req.file. ||
+  //   !req.body.user_id
+  // ) {
+  //   return res
+  //     .status(400)
+  //     .send(
+  //       "Please make sure to provide technique name, description and users_id fields in the request"
+  //     );
+  // }
 
 //   const {firebaseUrl} = req.file ? req.file : "";
 
   const newVideoId = uuidv4();
   knex("videos")
-    .insert({ ...req.body, id: newVideoId })
-    .then((_data) => {
+    .insert({ ...req.body, id: newVideoId, video:req.file.firebaseUrl })
+    .then(() => {
       knex("videos")
         .where({ id: newVideoId })
         .then((data) => {
@@ -65,7 +65,7 @@ const update = async (req, res) => {
   knex("videos")
     .where({ id: req.params.id })
     .update(req.body)
-    .then((_data) => {
+    .then(() => {
       knex("videos")
         .where({ id: req.params.id })
         .then((data) => {

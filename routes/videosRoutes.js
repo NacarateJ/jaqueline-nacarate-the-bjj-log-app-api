@@ -3,7 +3,7 @@ const videosController = require("../controllers/videosController");
 const uploadVideo = require("../firebaseServices/firebase");
 const multer = require("multer");
 
-const Multer = multer({
+const upload = multer({
   storage: multer.memoryStorage(),
   // can set up a video size limit here as well
 })
@@ -11,7 +11,8 @@ const Multer = multer({
 router
 .route("/")
 .get(videosController.findAll)
-.post(Multer.single("video"), uploadVideo, videosController.add);
+.post(upload.single("video"), uploadVideo, videosController.add);
+// .post(upload.single("video"), videosController.add);
 
 router
   .route("/:id")
