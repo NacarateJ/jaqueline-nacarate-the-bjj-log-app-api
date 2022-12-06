@@ -30,6 +30,7 @@ const findOne = (req, res) => {
 };
 
 
+// Joining the 2 tables (users and videos) to find all the videos from an specific user
 const videos = (req, res) => {
   knex("users")
     .join("videos", "videos.user_id", "users.id")
@@ -45,6 +46,8 @@ const videos = (req, res) => {
 };
 
 
+
+// Add new user
 const add = async (req, res) => {
   if (!req.body.name || !req.body.email || !req.body.belt_color) {
     return res
@@ -52,12 +55,13 @@ const add = async (req, res) => {
       .send("Please provide name, email and belt color in the request");
   }
 
+
+  // knex does not respond back with new row Id when adding entries
+  // so we are maintaining our own uuid in server
   const newUserId = uuidv4();
   knex("users")
     .insert({ ...req.body, id: newUserId })
     .then((_data) => {
-      // knex does not respond back with new row Id when adding entries
-      // so we are maintaining our own uuid in server
       knex("users")
         .where({ id: newUserId })
         .then((data) => {
@@ -85,7 +89,7 @@ const remove = async (req, res) => {
     .where({ id: req.params.id })
     .del()
     .then(() => {
-      res.status(200).json({ deletedVideotId: req.params.id });
+      res.status(200).json({ deletedUsertId: req.params.id });
     })
     .catch((err) =>
       res

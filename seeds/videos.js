@@ -11,8 +11,8 @@ exports.seed = async function (knex) {
       technique_name: "Closed Guard",
       description:
         "A skilled closed guard player chooses when to maintain control and when to open and attack, rather than allowing the top player to grind them down and force them to open their guard. Taking the time to develop several high-percentage sweeps and submissions — such as the hip-bump sweep or the triangle choke — will eventually turn you into a deadly closed guard player.",
-        video_path: "http://localhost:8080/videos/bjj0.mov",
-      users_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
+        video: "http://localhost:8080/videos/bjj0.mov",
+      user_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
       // updated_at: 1626032763000,
     },
     {
@@ -20,8 +20,8 @@ exports.seed = async function (knex) {
       technique_name: "Diagonal X-Guard",
       description:
         "To initiate X-guard, your opponent must have passed a foot over your thigh in a standing position, such that his shin and foot are next to your hip. You need to cross your legs and extend them to the opponent’s far leg. You will then flex your feet to trap their far thigh between both of your flexed feet, allowing you to off-base the opponent to set up sweeps and transitions to other open-guards such as single leg X.",
-        video_path: "http://localhost:8080/videos/bjj1.MP4",
-      users_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
+        video: "http://localhost:8080/videos/bjj1.MP4",
+      user_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
       // updated_at: 1625158995000,
     },
     {
@@ -30,8 +30,8 @@ exports.seed = async function (knex) {
       description:
         "Placing your legs across your opponent's chest, with one of his arms between your thighs and with the elbow joint against your hips. From that position your opponent's arm is grabbed with your arms and his forearm is placed onto your chest. Apply upwards pressure from your hips, while slightly pulling the hand towards your chest and in the direction of their pinky finger. Very little pressure is necessary to make the hold effective.",
 
-        video_path: "http://localhost:8080/videos/bjj2.mov",
-      users_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
+        video: "http://localhost:8080/videos/bjj2.mov",
+      user_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
       // updated_at: 1622991672000,
     },
     {
@@ -39,8 +39,8 @@ exports.seed = async function (knex) {
       technique_name: "Back Take from X-Guard",
       description:
         "From x-guard, controlling one of the sleeves, hook the closest leg with your arm bringing the opponent's  foot to the side of your neck. Grip the pants and pass the leg over your face.  With the same hand grab the belt at the back of the opponent and push his body away with your feet positioned higher than their knee line. This will imbalance them and they will fall on their butt straight into your guard. Take the back.",
-        video_path: "http://localhost:8080/videos/bjj3.MP4",
-      users_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
+        video: "http://localhost:8080/videos/bjj3.MP4",
+      user_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
       // updated_at: 1620850202000,
     },
     {
@@ -48,8 +48,8 @@ exports.seed = async function (knex) {
       technique_name: "Half Guard",
       description:
         "Between a full guard and side control or full mount. The combatant on top will try to untangle the leg and pass to obtain side control or mount, while the bottom combatant will try to transition into a full guard or alternatively attempt a sweep or submission.",
-        video_path: "http://localhost:8080/videos/bjj4.MOV",
-      users_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
+        video: "http://localhost:8080/videos/bjj4.MOV",
+      user_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
       // updated_at: 1630656720000,
     },
     {
@@ -57,8 +57,8 @@ exports.seed = async function (knex) {
       technique_name: "Half to Full Guard",
       description:
         "Basically take control again passing from the side guard to full guard.",
-        video_path: "http://localhost:8080/videos/bjj5.mov",
-      users_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
+        video: "http://localhost:8080/videos/bjj5.mov",
+      user_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
       // updated_at: 1630963412000,
     },
     {
@@ -66,8 +66,8 @@ exports.seed = async function (knex) {
       technique_name: "Butterfly Guard to Closed Guard",
       description:
         "Un-hook opponent's legs passing your legs around their waist 'locking' your feet behind their back.",
-        video_path: "http://localhost:8080/videos/bjj6.MOV",
-      users_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
+        video: "http://localhost:8080/videos/bjj6.MOV",
+      user_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
       // updated_at: 1631532721000,
     },
     {
@@ -75,8 +75,8 @@ exports.seed = async function (knex) {
       technique_name: "Mount",
       description:
         "Mount or mounted position is a dominant position, where one combatant sits on the other combatants torso with the face pointing towards the opponent's head.",
-        video_path: "http://localhost:8080/videos/bjj7.MOV",
-      users_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
+        video: "http://localhost:8080/videos/bjj7.MOV",
+      user_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
       // updated_at: 1631892222000,
     },
     {
@@ -84,8 +84,8 @@ exports.seed = async function (knex) {
       technique_name: "Guard Pulling",
       description:
         "Instead of wasting energy fighting their opponents to the ground from standing, guard players would just pull them into their guard.",
-        video_path: "http://localhost:8080/videos/bjj8.MOV",
-      users_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
+        video: "http://localhost:8080/videos/bjj8.MOV",
+      user_id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
       // updated_at: 1632344461000,
     },
   ]);

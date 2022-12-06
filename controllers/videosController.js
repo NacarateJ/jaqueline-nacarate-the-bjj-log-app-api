@@ -2,6 +2,7 @@ const { v4: uuidv4 } = require("uuid");
 const knex = require("knex")(require("../knexfile"));
 
 
+
 const findAll = (_req, res) => {
   knex("videos") //table name in my workbench
     .then((data) => {
@@ -30,19 +31,21 @@ const findOne = (req, res) => {
 };
 
 const add = (req, res) => {
-  // Validate the request body for required data
-  if (
-    !req.body.technique_name ||
-    !req.body.description||
-    // !req.body.video_path ||
-    !req.body.users_id
-  ) {
-    return res
-      .status(400)
-      .send(
-        "Please make sure to provide name, description and users_id fields in the request"
-      );
-  }
+//   Validate the request body for required data
+//   if (
+//     !req.body.technique_name ||
+//     !req.body.description||
+//     !req.body.video ||
+//     !req.body.user_id
+//   ) {
+//     return res
+//       .status(400)
+//       .send(
+//         "Please make sure to provide technique name, description and users_id fields in the request"
+//       );
+//   }
+
+//   const {firebaseUrl} = req.file ? req.file : "";
 
   const newVideoId = uuidv4();
   knex("videos")
@@ -56,6 +59,7 @@ const add = (req, res) => {
     })
     .catch((err) => res.status(400).send(`Error creating video ${err}`));
 };
+
 
 const update = async (req, res) => {
   knex("videos")
