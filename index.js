@@ -1,4 +1,3 @@
-const path = require("path");
 require("dotenv").config();
 
 
@@ -18,13 +17,12 @@ app.use(cors());
 app.use(express.json());
 app.use("/users", usersRoutes);
 app.use("/videos", videosRoutes);
-app.use(express.static(path.join(__dirname, "public")));
-
 
 
 app.get("/", (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, "public", "index.html"));
+  res.status(200).send("Welcome to The BJJ LogApp");
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
