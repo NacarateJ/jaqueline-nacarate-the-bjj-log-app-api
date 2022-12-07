@@ -45,8 +45,6 @@ stream.on("finish", async () => {
     // make the file public
     await file.makePublic();
 
-
-
     // get the public URL
     req.file.firebaseUrl = `https://storage.googleapis.com/${BUCKET}/${fileName}`;
 
