@@ -12,7 +12,6 @@ router
 .route("/")
 .get(videosController.findAll)
 .post(upload.single("video"), uploadVideo, videosController.add);
-// .post(upload.single("video"), videosController.add);
 
 router
   .route("/:id")
