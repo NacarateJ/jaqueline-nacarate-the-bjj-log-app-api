@@ -1,4 +1,3 @@
-
 var admin = require("firebase-admin");
 
 var serviceAccount = require("../firebase-key.json");
@@ -13,10 +12,11 @@ admin.initializeApp({
 const bucket = admin.storage().bucket();
 
 const uploadVideo = (req, res, next) => {
- if (
+  console.log(req.video);
+  if (
     !req.body.technique_name ||
-    !req.body.description||
-    // !req.file ||
+    !req.body.description ||
+    !req.file ||
     !req.body.user_id
   ) {
     return res
@@ -27,21 +27,24 @@ const uploadVideo = (req, res, next) => {
   }
 
   const video = req.file;
-  const fileName = Date.now() + "." + video.originalname.split(".").pop();
+  const fileName = Date.now()
+   + "." + video.originalname.split(".").pop();
 
-const file = bucket.file(fileName);
+  console.log(video);
 
-const stream = file.createWriteStream({
+  const file = bucket.file(fileName);
+
+  const stream = file.createWriteStream({
     metadata: {
-        contentType: video.mimetype,
+      contentType: video.mimetype,
     },
-});
+  });
 
-stream.on("error", (e) => {
+  stream.on("error", (e) => {
     console.error(e);
-});
+  });
 
-stream.on("finish", async () => {
+  stream.on("finish", async () => {
     // make the file public
     await file.makePublic();
 
@@ -49,10 +52,9 @@ stream.on("finish", async () => {
     req.file.firebaseUrl = `https://storage.googleapis.com/${BUCKET}/${fileName}`;
 
     next();
-});
+  });
 
-stream.end(video.buffer);
-    
+  stream.end(video.buffer);
 };
 
 module.exports = uploadVideo;
