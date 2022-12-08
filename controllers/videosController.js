@@ -32,6 +32,7 @@ const findOne = (req, res) => {
 
 const add = (req, res) => {
   const newVideoId = uuidv4();
+  console.log(req.body);
   knex("videos")
     .insert({ ...req.body, id: newVideoId, video:req.file.firebaseUrl })
     .then(() => {
