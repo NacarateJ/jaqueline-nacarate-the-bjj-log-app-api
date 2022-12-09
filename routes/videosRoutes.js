@@ -11,9 +11,6 @@ const upload = multer({
 router
 .route("/")
 .get(videosController.findAll)
-// .post(upload.single("video"), (req,res, next) => {
-// console.log(req.file);
-// });
 .post(upload.single("video"), uploadVideo, videosController.add);
 
 router

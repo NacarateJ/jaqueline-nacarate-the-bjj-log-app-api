@@ -49,7 +49,10 @@ const uploadVideo = (req, res, next) => {
     await file.makePublic();
 
     // get the public URL
-    req.file.firebaseUrl = `https://storage.googleapis.com/${BUCKET}/${fileName}`;
+    // req.file.firebaseUrl = `https://storage.googleapis.com/${BUCKET}/${fileName}`;
+    
+    req.file.firebaseUrl = `https://ik.imagekit.io/jndsbsm/${fileName}`;
+
 
     next();
   });
