@@ -13,3 +13,11 @@ Is an app designed for Jiu-Jitsers to keep track of the techniques learned in tr
 * It might ask about the Firebase-Key but just ignore it. Since the Firebase Storage is connected to ImageKit you should be able to have access to the videos I already have on the app.
 
 PS: The BJJ LogApp is still a work in progress. On the profile page we have full CRUD operations for the videos and the next step is to implemet the same for the users. 
+
+## Demo
+
+<div align="center">
+
+https://user-images.githubusercontent.com/114256348/212002972-54e8c887-8f15-40e0-982a-59380e1c2cb7.mp4
+
+  </div>
