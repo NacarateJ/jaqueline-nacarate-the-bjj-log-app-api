@@ -4,23 +4,29 @@ Is an app designed for Jiu-Jitsers to keep track of the techniques learned in tr
 
 - To handle the videos upload I'm using Multer - a node.js middleware for handling multipart/form-data. Once a video is uploaded, the file is saved in a Firebase Store and all the information about the video is saved in MySQL database.
 
-- To stream the videos in the browser I'm using ImageKit - an image management service that provides image optimization and fast CDN (content delivery network )delivery. I configured it to fetch the videos straight from my Firebase Storage.
+- To stream the videos in the browser I'm using ImageKit - an image management service that provides image optimization and fast CDN (content delivery network) delivery. I configured it to fetch the videos straight from my Firebase Storage.
 
-* To install and run the project you will need to clone or dowload the Front-end file - jaqueline-nacarate-the-bjj-log-app, and the Back-end file - jaqueline-nacarate-the-bjj-log-app-api.
-* Run nmp i to download modules needed
-* To start the Front-end run npm start
-* To start the Back-end run npm run server
-* It might ask about the Firebase-Key but just ignore it. Since the Firebase Storage is connected to ImageKit you should be able to have access to the videos I already have on the app.
 
-PS: The BJJ LogApp is still a work in progress. On the profile page we have full CRUD operations for the videos and the next step is to implemet the same for the users. 
+
+## Tech Stack and Tools
+* HTML, SASS, JavaScript, React, React Router, Node.js, Express, API's , MySQL, Knex.js, Multer, ImageKit, Firebase, Postman, Axios.
+
+## Installation:
+1. To install and run the project you will need to clone or dowload the Front-end file - [jaqueline-nacarate-the-bjj-log-app](https://github.com/NacarateJ/jaqueline-nacarate-the-bjj-log-app), and the Back-end file - [jaqueline-nacarate-the-bjj-log-app-api](https://github.com/NacarateJ/jaqueline-nacarate-the-bjj-log-app-api);
+2. Run ```nmp i``` to install all the required packages for the app;
+3. To start the Front-end run the command ```npm start```;
+4. To start the Back-end run the command ```npm run server```;
+5. It might ask about the Firebase-Key but just ignore it. Since the Firebase Storage is connected to ImageKit you should be able to have access to the videos I already have on the app.
+
 
 ## Environment Variables
-1. Front-end:
+1. Front-end: <br>
 Add the following variables in .env file:
 
 ```REACT_APP_API_URL=https://localhost:8080```
   
-2. Back-end:
+2. Back-end: <br>
+Add the following variables in .env file:
 
 ```DB_LOCAL_DBNAME="the-bjj-log-app"```<br>
 ```DB_LOCAL_USER="YOUR DB USER NAME"```<br>
@@ -45,10 +51,14 @@ Once the tables have been created we can seed them to populate the tables with d
 
 ```npm run seed```
 
+
+
+PS: The BJJ LogApp is still a work in progress. On the profile page we have full CRUD operations for the videos and the next step is to implemet the same for the users.
+
 ## Demo
 
 <div align="center">
 
-https://user-images.githubusercontent.com/114256348/212002972-54e8c887-8f15-40e0-982a-59380e1c2cb7.mp4
+https://user-images.githubusercontent.com/114256348/212002779-1df40fb0-a013-402b-ab25-233ebe77ff1e.mp4
 
   </div>
