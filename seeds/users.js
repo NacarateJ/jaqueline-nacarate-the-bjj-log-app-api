@@ -8,10 +8,10 @@ exports.seed = async function(knex) {
   await knex("users").insert([
     {
       id: "2c0d90bd-558e-4991-b31a-7d55e162a45d",
-      profile_image:"http://localhost:8080/images/image0.jpg",
+      profile_image: "http://localhost:8080/images/user.jpg",
       name: "Jaqueline Nacarate",
-      email: "jaquelinenacarate@gmail.com",
-      belt_color: "blue",
+      email: "jaquelinetest@gmail.com",
+      belt_color: "Blue",
     },
   ]);
 };
