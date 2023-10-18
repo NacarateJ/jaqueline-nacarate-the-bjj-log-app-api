@@ -72,6 +72,12 @@ const add = async (req, res) => {
 };
 
 const update = async (req, res) => {
+  if (!req.body.name || !req.body.email || !req.body.belt_color) {
+    return res
+      .status(400)
+      .send("Please provide name, email and belt color in the request");
+  }
+
   knex("users")
     .where({ id: req.params.id })
     .update(req.body)
@@ -81,7 +87,8 @@ const update = async (req, res) => {
         .then((data) => {
           res.status(200).json(data[0]);
         });
-    });
+    })
+    .catch((err) => res.status(400).send(`Error updating user ${err}`));
 };
 
 const remove = async (req, res) => {
